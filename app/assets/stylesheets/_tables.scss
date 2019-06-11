@@ -1,0 +1,30 @@
+table {
+  margin: 1rem 0;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+
+  tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+  }
+
+  td, th {
+    white-space: nowrap;
+    padding: 0.5rem;
+  }
+
+  td {
+
+  }
+}
+
+.table_actions a {
+  margin-left: 0.5rem;
+}

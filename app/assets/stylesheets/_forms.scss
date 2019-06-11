@@ -1,0 +1,40 @@
+form {
+  fieldset {
+    border: 1px solid #ddd;
+    padding: 1rem;
+
+    ol {
+      li {
+        margin-bottom: 1rem;
+
+        label {
+          font-weight: 400;
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+
+        &.boolean {
+          label {
+            font-weight: normal;
+          }
+        }
+
+        input[type=text],
+        input[type=number] {
+          padding: 0.5rem;
+          width: 100%;
+        }
+      }
+    }
+
+    &.actions {
+      border: 0;
+      ol {
+        li {
+          float: left;
+          margin: 0 1rem 0 0;
+        }
+      }
+    }
+  }
+}

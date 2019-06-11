@@ -1,0 +1,14 @@
+.status_tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  color: #fff;
+
+  &.yes {
+    background-color: green;
+  }
+
+  &.no {
+    background-color: red;
+  }
+}

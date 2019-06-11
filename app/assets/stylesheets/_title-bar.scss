@@ -1,0 +1,14 @@
+.title_bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  .action_items {
+    text-align: right;
+
+    .action_item a {
+      color: #000;
+      font-weight: bold;
+    }
+  }
+}
