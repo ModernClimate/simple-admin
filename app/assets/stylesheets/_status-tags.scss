@@ -1,14 +1,14 @@
 .status_tag {
+  border-radius: $border-radius;
+  color: color('white');
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
-  border-radius: 1rem;
-  color: #fff;
 
   &.yes {
-    background-color: green;
+    background-color: color('success');
   }
 
   &.no {
-    background-color: red;
+    background-color: color('error');
   }
 }

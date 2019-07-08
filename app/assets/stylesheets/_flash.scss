@@ -1,0 +1,25 @@
+.flash {
+  border: 1px solid currentColor;
+  border-radius: $border-radius;
+  font-weight: bold;
+  padding: 1rem;
+
+  &_notice {
+    background-color: color('success', 0.95);
+    color: color('success');
+  }
+
+  &_alert {
+    background-color: color('info', 0.95);
+    color: color('info');
+  }
+
+  &_error {
+    background-color: color('error', 0.95);
+    color: color('error');
+  }
+
+  .logged_out & {
+    margin: 0 1rem;
+  }
+}
