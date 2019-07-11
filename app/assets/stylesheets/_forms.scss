@@ -1,19 +1,62 @@
 form {
   fieldset {
     background-color: color('white');
-    border: 1px solid #ddd;
+    border: 1px solid color('light', -0.1);
     border-radius: $border-radius;
     padding: 1rem;
     margin-bottom: 1rem;
 
+    ol {
+      display: grid;
+      grid-gap: 0 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    }
+
     li {
       margin-bottom: 1rem;
 
-      &:last-child {
+      &.has_many_container {
+        background-color: color('light');
+        border: 1px solid color('light', -0.1);
+        border-radius: $border-radius;
+        grid-column: 1 / -1;
+        padding: 1rem;
+
+        h3 {
+          grid-column: 1 / -1;
+        }
+
+        .has_many_add {
+          grid-column: 1;
+          text-align: center;
+        }
+      }
+
+      &.has_many_delete {
+        grid-column: 1;
+      }
+
+      &.hidden {
+        display: none;
+      }
+
+      &.check_boxes {
+        align-self: flex-start;
         margin-bottom: 0;
       }
 
-      &.boolean,
+      &.text {
+        grid-row: span 2;
+      }
+
+      &.boolean {
+        align-self: flex-end;
+
+        label {
+          font-weight: normal;
+        }
+      }
+
       &.choice {
         display: inline-block;
         margin-bottom: 0;
@@ -44,14 +87,24 @@ form {
       border-width: 0;
       padding-left: 0;
 
+      ol {
+        display: block;
+      }
+
       li {
         float: left;
         margin: 0 1rem 0 0;
       }
     }
 
+    &.has_many_fields {
+      li {
+        align-self: flex-end;
+      }
+    }
+
     .has_many_container {
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
   }
 
@@ -63,6 +116,7 @@ form {
       border: 1px solid color('gray');
       border-radius: $border-radius;
       box-shadow: none;
+      display: block;
       font-size: 1rem;
       padding: 0.5rem;
       width: 100%;
@@ -73,6 +127,11 @@ form {
         box-shadow: 0 0 0 3px -moz-mac-focusring;
         outline: none;
       }
+    }
+
+    textarea {
+      height: 107px;
+      resize: vertical;
     }
 
     input[type='checkbox'] {
