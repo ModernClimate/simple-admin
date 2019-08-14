@@ -1,0 +1,63 @@
+// -----------------------------------------------------------------------------
+// Variables
+// -----------------------------------------------------------------------------
+
+$colors: (
+  'primary': (
+    'hue': 9,
+    'saturation': 66%,
+    'lightness': 45%
+  ),
+  'secondary': (
+    'hue': 23,
+    'saturation': 73%,
+    'lightness': 59%
+  ),
+  'black': (
+    'hue': 0,
+    'saturation': 0%,
+    'lightness': 15%
+  ),
+  'gray': (
+    'hue': 180,
+    'saturation': 0%,
+    'lightness': 45%
+  ),
+  'light': (
+    'hue': 180,
+    'saturation': 0%,
+    'lightness': 97.5%
+  ),
+  'white': (
+    'hue': 0,
+    'saturation': 0%,
+    'lightness': 100%
+  ),
+  'success': (
+    'hue': 100,
+    'saturation': 50%,
+    'lightness': 50%
+  ),
+  'error': (
+    'hue': 0,
+    'saturation': 75%,
+    'lightness': 50%
+  ),
+  'info': (
+    'hue': 45,
+    'saturation': 90%,
+    'lightness': 60%
+  )
+);
+
+$font-sizes: (
+  'h1': 3rem,
+  'h2': 2.44rem,
+  'h3': 1.95rem,
+  'h4': 1.56rem,
+  'h5': 1.25rem
+);
+
+$border-radius: 0.25rem;
+
+$box-shadow: 0 0 4px color('black', 0, 0.1);

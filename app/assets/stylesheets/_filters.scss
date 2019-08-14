@@ -1,0 +1,39 @@
+.filter_form {
+  &_field {
+    margin-bottom: 1rem;
+  }
+
+  .buttons {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+      margin-right: 1rem;
+    }
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  .input {
+    label,
+    input,
+    select {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .clear_filters_btn {
+    border-radius: 0.25rem;
+    border: 2px solid currentColor;
+    color: color('black');
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+  }
+}

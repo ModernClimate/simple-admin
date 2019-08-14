@@ -1,14 +1,33 @@
 .title_bar {
+  align-items: flex-end;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  padding: 1rem;
+
+  h2 {
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
 
   .action_items {
     text-align: right;
+  }
 
-    .action_item a {
-      color: #000;
-      font-weight: bold;
+  .action_item {
+    margin-left: 1rem;
+
+    &:empty {
+      display: none;
+    }
+
+    a {
+      border-radius: 0.25rem;
+      border: 2px solid currentColor;
+      color: color('black');
+      display: inline-block;
+      font-weight: 500;
+      padding: 0.25rem 0.75rem;
+      text-decoration: none;
     }
   }
 }

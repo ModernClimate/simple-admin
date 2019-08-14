@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// Functions
+// -----------------------------------------------------------------------------
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @if ($map == null) {
+    @error 'invalid declaration';
+  }
+
+  @return $map;
+}
+
+@function color($color, $tint: 0, $alpha: 1) {
+  $hue: map-deep-get($colors, $color, 'hue');
+  $saturation: map-deep-get($colors, $color, 'saturation');
+  $lightness: map-deep-get($colors, $color, 'lightness');
+
+  // adjust lightness based on tint amount
+  // 0 preserves original lightness, 1 is white, -1 is black
+  @if ($tint > 0) {
+    $lightness: calc((100% - #{$lightness}) * #{$tint} + #{$lightness});
+  } @else if ($tint < 0) {
+    $lightness: calc(#{$lightness} - #{$lightness} * #{abs($tint)});
+  }
+
+  @return hsla($hue, $saturation, $lightness, $alpha);
+}
+
+@function font-size($size) {
+  @return map-get($font-sizes($size));
+}

@@ -1,0 +1,73 @@
+#index_footer {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+
+  .download_links {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: auto;
+
+    a {
+      background-color: color('light', 0.25);
+      border-radius: $border-radius;
+      border: 1px solid color('light', -0.1);
+      color: color('black');
+      display: block;
+      margin-left: 0.5rem;
+      padding: 0.25rem 0.5rem;
+      text-decoration: none;
+    }
+  }
+
+  .pagination_information {
+    color: color('gray');
+
+    &:not(:first-child) {
+      margin-right: 1.5rem;
+    }
+
+    b {
+      color: color('black');
+      font-weight: bold;
+    }
+  }
+}
+
+.pagination {
+  align-items: center;
+  display: flex;
+
+  .page {
+    &.current {
+      background-color: color('light', 0.25);
+      border-radius: $border-radius;
+      border: 1px solid color('light', -0.1);
+      padding: 0.25rem 0.5rem;
+      margin: 0 0.25rem;
+    }
+
+    &.gap {
+      padding-right: 0.25rem;
+    }
+
+    a {
+      display: block;
+      padding: 0.25rem 0.5rem;
+      text-decoration: none;
+    }
+  }
+
+  .first,
+  .prev,
+  .next,
+  .last {
+    a {
+      display: block;
+      padding: 0.25rem 0.5rem;
+      text-decoration: none;
+    }
+  }
+}
