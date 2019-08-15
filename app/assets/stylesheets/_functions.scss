@@ -2,34 +2,25 @@
 // Functions
 // -----------------------------------------------------------------------------
 
-@function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-    $map: map-get($map, $key);
+@function color($name, $adjustment: 0) {
+  $color: map-get($colors, $name);
+
+  @if ($color == null or abs($adjustment) > 1) {
+    @error 'invalid color';
   }
 
-  @if ($map == null) {
-    @error 'invalid declaration';
-  }
+  $mix-color: if($adjustment > 0, #fff, #000);
+  $amount: percentage(abs($adjustment));
 
-  @return $map;
-}
-
-@function color($color, $tint: 0, $alpha: 1) {
-  $hue: map-deep-get($colors, $color, 'hue');
-  $saturation: map-deep-get($colors, $color, 'saturation');
-  $lightness: map-deep-get($colors, $color, 'lightness');
-
-  // adjust lightness based on tint amount
-  // 0 preserves original lightness, 1 is white, -1 is black
-  @if ($tint > 0) {
-    $lightness: calc((100% - #{$lightness}) * #{$tint} + #{$lightness});
-  } @else if ($tint < 0) {
-    $lightness: calc(#{$lightness} - #{$lightness} * #{abs($tint)});
-  }
-
-  @return hsla($hue, $saturation, $lightness, $alpha);
+  @return mix($mix-color, $color, $amount);
 }
 
 @function font-size($size) {
-  @return map-get($font-sizes($size));
+  $font-size: map-get($font-sizes, $size);
+
+  @if ($font-size == null) {
+    @error 'invalid font size';
+  }
+
+  @return $font-size;
 }

@@ -1,11 +1,11 @@
 html {
   font-family: system-ui, sans-serif;
-  font-size: 14px;
+  font-size: font-size('base');
   font-weight: 400;
 }
 
 body {
-  background-color: color('light');
+  background-color: color('white', -0.02);
   line-height: 1.45;
   color: color('black');
 }
@@ -26,27 +26,27 @@ h5 {
 
 h1 {
   margin-top: 0;
-  font-size: 3rem;
+  font-size: font-size('h1');
 }
 
 h2 {
-  font-size: 2.44rem;
+  font-size: font-size('h2');
 }
 
 h3 {
-  font-size: 1.95rem;
+  font-size: font-size('h3');
 }
 
 h4 {
-  font-size: 1.56rem;
+  font-size: font-size('h4');
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: font-size('h5');
 }
 
 small {
-  font-size: 0.8rem;
+  font-size: 0.7em;
 }
 
 a {
