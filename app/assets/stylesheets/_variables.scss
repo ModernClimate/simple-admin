@@ -2,62 +2,38 @@
 // Variables
 // -----------------------------------------------------------------------------
 
-$colors: (
-  'primary': (
-    'hue': 9,
-    'saturation': 66%,
-    'lightness': 45%
-  ),
-  'secondary': (
-    'hue': 23,
-    'saturation': 73%,
-    'lightness': 59%
-  ),
-  'black': (
-    'hue': 0,
-    'saturation': 0%,
-    'lightness': 15%
-  ),
-  'gray': (
-    'hue': 180,
-    'saturation': 0%,
-    'lightness': 45%
-  ),
-  'light': (
-    'hue': 180,
-    'saturation': 0%,
-    'lightness': 97.5%
-  ),
-  'white': (
-    'hue': 0,
-    'saturation': 0%,
-    'lightness': 100%
-  ),
-  'success': (
-    'hue': 100,
-    'saturation': 50%,
-    'lightness': 50%
-  ),
-  'error': (
-    'hue': 0,
-    'saturation': 75%,
-    'lightness': 50%
-  ),
-  'info': (
-    'hue': 45,
-    'saturation': 90%,
-    'lightness': 60%
-  )
+$base-colors: (
+  'primary': #ff444e,
+  'secondary': #6ff5cb,
+  'black': #000,
+  'gray': #737373,
+  'white': #fff,
+  'success': #6abf40,
+  'error': #df2020,
+  'info': #f5c73d
 );
 
+$theme-colors: () !default;
+
+$colors: map-merge($base-colors, $theme-colors);
+
 $font-sizes: (
+  'base': 14px,
   'h1': 3rem,
   'h2': 2.44rem,
   'h3': 1.95rem,
   'h4': 1.56rem,
-  'h5': 1.25rem
+  'h5': 1.25rem,
+  'h6': 1rem,
+  'input': 1rem
 );
 
 $border-radius: 0.25rem;
 
-$box-shadow: 0 0 4px color('black', 0, 0.1);
+$box-shadow: 0 0 0.25rem rgba(color('black'), 0.1);
+
+$breakpoints: (
+  sm: 0,
+  md: 600px,
+  lg: 900px
+);

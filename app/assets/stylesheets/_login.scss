@@ -1,15 +1,19 @@
 #login {
   background: color('white');
-  border: 1px solid color('light', -0.1);
+  border: 1px solid color('white', -0.1);
   border-radius: $border-radius;
   max-width: 100%;
-  width: 30rem;
+  width: calc(100vw - 2rem);
+
+  @include breakpoint(lg) {
+    width: 30rem;
+  }
 
   h2 {
     background: color('primary');
     border-radius: $border-radius $border-radius 0 0;
     color: color('white');
-    font-size: 1.56rem;
+    font-size: font-size('h4');
     margin: -1px;
     padding: 1rem;
   }
