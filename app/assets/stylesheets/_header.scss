@@ -1,11 +1,29 @@
 .header {
   background-color: color('white');
-  border-right: 1px solid color('white', -0.1);
+  border-bottom: 1px solid color('white', -0.1);
   color: color('black');
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(lg) {
+    border-bottom: none;
+    border-right: 1px solid color('white', -0.1);
+    display: block;
+    padding: 1rem;
+  }
 
   h1 {
-    margin-bottom: 2rem;
+    background-color: color('primary');
+    color: color('white');
+    margin-bottom: 0;
+    padding: 1rem;
+
+    @include breakpoint(lg) {
+      background-color: transparent;
+      color: inherit;
+      margin-bottom: 2rem;
+      padding: 0;
+    }
   }
 
   li {
@@ -28,10 +46,39 @@
     }
   }
 
-  [id='utility_nav'] {
+  &-item {
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+    padding-right: 1rem;
+
+    @include breakpoint(lg) {
+      display: block;
+      padding-right: 0;
+    }
+
+    > * {
+      margin: 0 1rem;
+      white-space: nowrap;
+    }
+  }
+
+  #tabs {
+    order: 1;
+  }
+
+  #utility_nav {
+    justify-content: center;
     border-top: 1px solid color('white', -0.1);
-    margin-top: 2rem;
-    padding-top: 2rem;
-    text-align: center;
+    background-color: color('white', -0.1);
+    margin-bottom: 0.5rem;
+    padding-top: 0.5rem;
+
+    @include breakpoint(lg) {
+      background-color: transparent;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      text-align: center;
+    }
   }
 }

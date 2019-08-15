@@ -7,9 +7,11 @@ form {
     margin-bottom: 1rem;
 
     ol {
-      display: grid;
-      grid-gap: 0 1rem;
-      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+      @include breakpoint(lg) {
+        display: grid;
+        grid-gap: 0 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+      }
     }
 
     li {
@@ -117,6 +119,7 @@ form {
       border-radius: $border-radius;
       box-shadow: none;
       display: block;
+      font-family: inherit;
       font-size: font-size('input');
       padding: 0.5rem;
       width: 100%;

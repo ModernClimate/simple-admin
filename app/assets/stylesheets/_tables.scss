@@ -49,10 +49,14 @@ table {
   td,
   th {
     padding: 0.5rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     max-width: 15rem;
+    overflow: auto;
+    white-space: nowrap;
+
+    @include breakpoint(lg) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     .attributes_table & {
       white-space: normal;

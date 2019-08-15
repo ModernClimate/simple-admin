@@ -1,0 +1,12 @@
+@mixin breakpoint($breakpoint) {
+  $min-width: map-get($breakpoints, #{$breakpoint});
+
+  // Only wrap content in a media query if the breakpoint is more than 0px
+  @if ($min-width <= 0) {
+    @content;
+  } @else {
+    @media (min-width: $min-width) {
+      @content;
+    }
+  }
+}
